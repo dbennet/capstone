@@ -26,6 +26,7 @@ end
 
 # gem 'mongoid', '~>5.1', ">=5.1.5"
 gem 'mongoid'
+gem 'pg'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
