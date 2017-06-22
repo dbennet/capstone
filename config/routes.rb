@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :cities
   scope :api, defaults: {format: :json} do
-  	resources :foos, except: [:new,:edit]
-  	resources :bars, except: [:new,:edit]
+  	resources :cities, except: [:new,:edit]
+  	resources :states, except: [:new,:edit]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -12,3 +11,5 @@ Rails.application.routes.draw do
   root "ui#index"
 
 end
+
+
