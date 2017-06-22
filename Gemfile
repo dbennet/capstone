@@ -1,3 +1,12 @@
+source 'https://rubygems.org'
+
+
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+#gem 'rails-api', '~>0.4', '>=0.4.0'
+gem 'pry-rails', '~>0.3', '>=0.3.4'
+gem 'rack-cors', '~>0.4', '>=0.4.0', :require => 'rack/cors'
+
+gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
@@ -27,6 +36,7 @@ gem 'mongoid'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
 
 
 # Use unicorn as the app server
