@@ -45,7 +45,7 @@ RSpec.describe "ApiDevelopments", type: :request do
      #expect(response).to have_http_status(:ok)
      #expect(JSON.parse(response.body)["name"]).to eq("test")
 
-
+     puts state_path
      expect(state_path).to eq("/api/states")
      get state_path(object.id) 
      expect(response).to have_http_status(:ok)
