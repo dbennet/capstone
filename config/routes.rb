@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cities
   scope :api, defaults: {format: :json} do
   	resources :foos, except: [:new,:edit]
   	resources :bars, except: [:new,:edit]

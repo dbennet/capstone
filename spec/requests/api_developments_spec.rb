@@ -8,17 +8,17 @@ RSpec.describe "ApiDevelopments", type: :request do
 
 
   describe "RDMS-backed model" do 
-    before(:each) {Foo.delete_all}
-    after(:each) {Foo.delete_all}
+    before(:each) {City.delete_all}
+    after(:each) {City.delete_all}
 
     it "create RDMS-backed model" do
-    	object=Foo.create(:name=>"test")
-    	expect(Foo.find(object.id).name).to eq("test")
+    	object=City.create(:name=>"test")
+    	expect(City.find(object.id).name).to eq("test")
     end
 
     it "expose RDMS-backed resource" do
-    	object=Foo.create(:name=>"test")
-    	get foo_path(object.id)
+    	object=City.create(:name=>"test")
+    	get city_path(object.id)
     	expect(response).to have_http_status(:ok)
     	expect(JSON.parse(response.body)["name"]).to eq("test")
 
@@ -28,26 +28,26 @@ RSpec.describe "ApiDevelopments", type: :request do
 
   describe "MongoDB-backed" do
 
-    before(:each) {Bar.delete_all}
-    after(:each) {Bar.delete_all}
+    before(:each) {State.delete_all}
+    after(:each) {State.delete_all}
 
   	it "create MongoDB-backed model" do
-      object = Bar.create(:name=>"test")
-      expect(Bar.find(object.id).name).to eq("test")
+      object = State.create(:name=>"test")
+      expect(State.find(object.id).name).to eq("test")
     end
   	
     it "expose MongoDB-backed API resource" do
      
-     object = Bar.create(:name=>"test")
+     object = State.create(:name=>"test")
      
 
-     #get bar_path(object.id)
+     #get State_path(object.id)
      #expect(response).to have_http_status(:ok)
      #expect(JSON.parse(response.body)["name"]).to eq("test")
 
 
-     expect(bars_path).to eq("/api/bars")
-     get bar_path(object.id) 
+     expect(States_path).to eq("/api/States")
+     get State_path(object.id) 
      expect(response).to have_http_status(:ok)
      expect(parsed_body["name"]).to eq(object.name)
      expect(parsed_body).to include("created_at")

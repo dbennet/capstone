@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "foos/show", type: :view do
+RSpec.describe "cities/show", type: :view do
   before(:each) do
-    @foo = assign(:foo, Foo.create!(
+    @city = assign(:city, City.create!(
       :name => "Name"
     ))
   end
