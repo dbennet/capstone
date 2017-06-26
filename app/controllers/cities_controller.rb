@@ -24,16 +24,27 @@ class CitiesController < ApplicationController
   # POST /cities
   # POST /cities.json
   def create
-    @city = City.new(city_params)
+    
+    # @city = City.new(city_params)
+    # respond_to do |format|
+    #   if @city.save
+    #     format.html { redirect_to @city, notice: 'City was successfully created.' }
+    #     format.json { render :show, status: :created, location: @city }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @city.errors, status: :unprocessable_entity }
+    #   end
+    # end
 
-    respond_to do |format|
-      if @city.save
-        format.html { redirect_to @city, notice: 'City was successfully created.' }
-        format.json { render :show, status: :created, location: @city }
-      else
-        format.html { render :new }
-        format.json { render json: @city.errors, status: :unprocessable_entity }
-      end
+
+
+   @city = City.new(city_params)
+
+    if @city.save
+      #render json: @bar, status: :created, location: @bar
+      render :show, status: :created, location: @city
+    else
+      render json: @city.errors, status: :unprocessable_entity
     end
   end
 
