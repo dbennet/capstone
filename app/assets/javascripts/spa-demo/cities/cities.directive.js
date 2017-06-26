@@ -11,6 +11,8 @@
     
     console.log(APP_CONFIG.cities_html);
     console.log("heelloslslsflsf");
+
+    
     
     var directive = {
         templateUrl: APP_CONFIG.cities_html,

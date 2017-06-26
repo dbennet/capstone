@@ -11,6 +11,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jbuilder'
+gem 'responders'
 
 group :development do
   gem 'spring', '~>2.0', '>=2.0.0'
