@@ -4,8 +4,8 @@
   angular
     .module("spa-demo")
     .constant("spa-demo.APP_CONFIG", {
-    	//server_url: "<%= ENV['RAILS_API_URL'] %>",
-    	server_url: "http://localhost:3000",
+    	server_url: "<%= ENV['RAILS_API_URL'] %>",
+    	//server_url: "http://localhost:3000",
     	main_page_html: "<%= asset_path('spa-demo/pages/main.html') %>",
     	cities_html: "<%= asset_path('spa-demo/cities/cities.html') %>"
     });
